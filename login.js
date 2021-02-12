@@ -1,9 +1,3 @@
-console.log("congrats, you have activated the JS file.");
-
-// function advancePage() {
-//   window.location.href = "./order.html";
-// }
-
 window.onload = function () {
   var element = document.getElementById("form");
   if (element.addEventListener) {
@@ -24,6 +18,11 @@ window.onload = function () {
       advancePage();
     } else {
       console.log("please use the correct input formats");
+      if(checkName(nameInput) == false){
+        alert("Please fix your name to only include letters.");
+      }else{
+        alert("Please provide a valid email address");
+      }
     }
   }
   function checkName(name) {
