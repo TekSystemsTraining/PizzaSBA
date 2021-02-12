@@ -27,7 +27,6 @@ window.onload = function () {
   }
   function checkName(name) {
     var regex = new RegExp(/^[a-zA-Z0-9_.-]*$[a-zA-Z_.-]*$/g);
-    //console.log(regex.test(name));
     result = regex.test(name);
     console.log("result", result);
     return result;

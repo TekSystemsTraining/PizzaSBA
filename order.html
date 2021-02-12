@@ -1,43 +1,230 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="./order.js"></script>
     <link
-    rel="stylesheet"
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-  />
-</head>
-<body>
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+  <body>
+    <div class="order-form">
+      <form action="" method="post">
+        <h2 class="text-center">Build your pizza!</h2>
+        <div id="sizeSelection  w-50 p-3">
+          <h4>Choose the size of your pizza</h4>
 
-    <div class="login-form">
-        <form action="" method="post">
-          <h2 class="text-center">Log in</h2>
           <div class="form-group">
-            <input
-              class="form-control"
-              placeholder="Username"
-              required="required"
-            />
+            <label for="sizeSelection">Size(Mondo recommended):</label>
+            <select class="form-control" id="sizeSelect">
+              <option>Small</option>
+              <option>Medium</option>
+              <option>Large</option>
+              <option>Mondo</option>
+            </select>
           </div>
-          <div class="form-group">
-            <input
-              class="form-control"
-              placeholder="Email"
-              required="required"
-            />
+        </div>
+        <div id="sauceSelect">
+          <h4>Select your sauce</h4>
+          <div id="sauces">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="exampleRadios"
+                id="marinara"
+                value="option1"
+                checked
+              />
+              <label class="form-check-label" for="marinara"> Marinara </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="exampleRadios"
+                id="garlic"
+                value="option2"
+              />
+              <label class="form-check-label" for="garlic"> garlic </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="exampleRadios"
+                id="polynesian"
+                value="option3"
+              />
+              <label class="form-check-label" for="polynesian">
+                polynesian
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="exampleRadios"
+                id="martian"
+                value="option4"
+              />
+              <label class="form-check-label" for="martian"> martian </label>
+            </div>
           </div>
-          <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block" onclick="advancePage()">
-              Commence order!
-            </button>
+        </div>
+        <div id="toppingsSection">
+          <h4>Select your toppin's</h4>
+          <div id="toppings">
+            <ul>
+              <li>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="defaultCheck1"
+                  />
+                  <label class="form-check-label" for="defaultCheck1">
+                    Pepperoni
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="defaultCheck2"
+                  />
+                  <label class="form-check-label" for="defaultCheck2">
+                    Pineapple
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="defaultCheck1"
+                  />
+                  <label class="form-check-label" for="defaultCheck1">
+                    All the Meats(May include galactic rat);
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="defaultCheck1"
+                  />
+                  <label class="form-check-label" for="defaultCheck1">
+                    Mushrooms
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="defaultCheck1"
+                  />
+                  <label class="form-check-label" for="defaultCheck1">
+                    Jalapenos
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="defaultCheck1"
+                  />
+                  <label class="form-check-label" for="defaultCheck1">
+                    Roasted Garlic
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="defaultCheck1"
+                  />
+                  <label class="form-check-label" for="defaultCheck1">
+                    Onion
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="defaultCheck1"
+                  />
+                  <label class="form-check-label" for="defaultCheck1">
+                    Canadian Bacon
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="defaultCheck1"
+                  />
+                  <label class="form-check-label" for="defaultCheck1">
+                    Bell Pepper
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="defaultCheck1"
+                  />
+                  <label class="form-check-label" for="defaultCheck1">
+                    Olive
+                  </label>
+                </div>
+              </li>
+            </ul>
           </div>
-          <div class="clearfix">
-          </div>
-        </form>
-      </div>
-    
-</body>
+        </div>
+
+        <div class="form-group">
+          <button
+            type="submit"
+            class="btn btn-primary btn-block"
+            onclick="advancePage()"
+          >
+            Commence order!
+          </button>
+        </div>
+        <div class="clearfix"></div>
+      </form>
+    </div>
+  </body>
 </html>
