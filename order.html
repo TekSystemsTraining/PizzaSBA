@@ -13,13 +13,12 @@
   </head>
   <body>
     <div class="order-form">
-      <form action="" method="post">
+      <form action="" method="post" id="orderForm">
         <h2 class="text-center">Build your pizza!</h2>
         <div id="sizeSelection  w-50 p-3">
-          <h4>Choose the size of your pizza</h4>
+          <h4>Choose the size of your pizza(Mondo recommended)</h4>
 
           <div class="form-group">
-            <label for="sizeSelection">Size(Mondo recommended):</label>
             <select class="form-control" id="sizeSelect">
               <option>Small</option>
               <option>Medium</option>
@@ -30,12 +29,12 @@
         </div>
         <div id="sauceSelect">
           <h4>Select your sauce</h4>
-          <div id="sauces">
+          <div id="sauces" style="margin-left: 40px">
             <div class="form-check">
               <input
                 class="form-check-input"
                 type="radio"
-                name="exampleRadios"
+                name="sauce"
                 id="marinara"
                 value="option1"
                 checked
@@ -46,46 +45,47 @@
               <input
                 class="form-check-input"
                 type="radio"
-                name="exampleRadios"
+                name="sauce"
                 id="garlic"
                 value="option2"
               />
-              <label class="form-check-label" for="garlic"> garlic </label>
+              <label class="form-check-label" for="garlic"> Garlic </label>
             </div>
             <div class="form-check">
               <input
                 class="form-check-input"
                 type="radio"
-                name="exampleRadios"
+                name="sauce"
                 id="polynesian"
                 value="option3"
               />
               <label class="form-check-label" for="polynesian">
-                polynesian
+                Polynesian
               </label>
             </div>
             <div class="form-check">
               <input
                 class="form-check-input"
                 type="radio"
-                name="exampleRadios"
+                name="sauce"
                 id="martian"
                 value="option4"
               />
-              <label class="form-check-label" for="martian"> martian </label>
+              <label class="form-check-label" for="martian"> Martian </label>
             </div>
           </div>
         </div>
         <div id="toppingsSection">
           <h4>Select your toppin's</h4>
-          <div id="toppings">
+          <div id="toppings" onchange="updateToppings()">
             <ul>
               <li>
                 <div class="form-check">
                   <input
                     class="form-check-input"
                     type="checkbox"
-                    value=""
+                    value="pepperoni"
+                    name="topping"
                     id="defaultCheck1"
                   />
                   <label class="form-check-label" for="defaultCheck1">
@@ -98,7 +98,8 @@
                   <input
                     class="form-check-input"
                     type="checkbox"
-                    value=""
+                    name="topping"
+                    value="pineapple"
                     id="defaultCheck2"
                   />
                   <label class="form-check-label" for="defaultCheck2">
@@ -111,7 +112,8 @@
                   <input
                     class="form-check-input"
                     type="checkbox"
-                    value=""
+                    value="all the meats"
+                    name="topping"
                     id="defaultCheck1"
                   />
                   <label class="form-check-label" for="defaultCheck1">
@@ -124,7 +126,8 @@
                   <input
                     class="form-check-input"
                     type="checkbox"
-                    value=""
+                    name="topping"
+                    value="mushroom"
                     id="defaultCheck1"
                   />
                   <label class="form-check-label" for="defaultCheck1">
@@ -137,7 +140,8 @@
                   <input
                     class="form-check-input"
                     type="checkbox"
-                    value=""
+                    name="topping"
+                    value="jalapenos"
                     id="defaultCheck1"
                   />
                   <label class="form-check-label" for="defaultCheck1">
@@ -150,7 +154,8 @@
                   <input
                     class="form-check-input"
                     type="checkbox"
-                    value=""
+                    name="topping"
+                    value="roasted garlic"
                     id="defaultCheck1"
                   />
                   <label class="form-check-label" for="defaultCheck1">
@@ -163,7 +168,8 @@
                   <input
                     class="form-check-input"
                     type="checkbox"
-                    value=""
+                    value="onion"
+                    name="topping"
                     id="defaultCheck1"
                   />
                   <label class="form-check-label" for="defaultCheck1">
@@ -176,7 +182,8 @@
                   <input
                     class="form-check-input"
                     type="checkbox"
-                    value=""
+                    value="canadian bacon"
+                    name="topping"
                     id="defaultCheck1"
                   />
                   <label class="form-check-label" for="defaultCheck1">
@@ -189,7 +196,8 @@
                   <input
                     class="form-check-input"
                     type="checkbox"
-                    value=""
+                    value="bell pepper"
+                    name="topping"
                     id="defaultCheck1"
                   />
                   <label class="form-check-label" for="defaultCheck1">
@@ -202,11 +210,40 @@
                   <input
                     class="form-check-input"
                     type="checkbox"
-                    value=""
+                    value="olive"
+                    name="topping"
                     id="defaultCheck1"
                   />
                   <label class="form-check-label" for="defaultCheck1">
                     Olive
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value="extra cheese"
+                    name="topping"
+                    id="defaultCheck1"
+                  />
+                  <label class="form-check-label" for="defaultCheck1">
+                    Extra Cheese
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value="no cheese"
+                    name="topping"
+                    id="defaultCheck1"
+                  />
+                  <label class="form-check-label" for="defaultCheck1">
+                    No Cheese(that really isn't pizza but okay)
                   </label>
                 </div>
               </li>
@@ -216,15 +253,18 @@
 
         <div class="form-group">
           <button
-            type="submit"
+            type="button"
             class="btn btn-primary btn-block"
-            onclick="advancePage()"
+            onclick="order()"
           >
-            Commence order!
+            Submit order!
           </button>
         </div>
         <div class="clearfix"></div>
       </form>
+    </div>
+    <div id="orderComplete" class="invisible">
+        <h1>Your Order is complete! Once you review your order click status to see the status of your out of this world pie.</h1>
     </div>
   </body>
 </html>

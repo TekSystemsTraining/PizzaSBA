@@ -1,32 +1,46 @@
 .order-form {
-    width: 800px;
-    margin: 50px auto;
-  }
-  .order-form form {
-    margin-bottom: 15px;
-    background: #f7f7f7;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    padding: 30px;
-  }
-  .order-form h2 {
-    margin: 0 0 15px;
-  }
-  .form-control,
-  .btn {
-    min-height: 38px;
-    border-radius: 2px;
-  }
-  .btn {
-    font-size: 15px;
-    font-weight: bold;
-  }
-  ul {
-    column-count: 2;
-    column-gap: 2rem;
-    list-style: none;
-  }
-  #sauces{
-    column-count: 2;
-    column-gap: 2rem;
-    list-style: none;
-  }
+  width: 800px;
+  margin: 50px auto;
+}
+.order-form form {
+  margin-bottom: 15px;
+  background: #f7f7f7;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  padding: 30px;
+}
+.order-form h2 {
+  margin: 0 0 15px;
+}
+.form-control,
+.btn {
+  min-height: 38px;
+  border-radius: 2px;
+}
+.btn {
+  font-size: 15px;
+  font-weight: bold;
+}
+ul {
+  column-count: 2;
+  column-gap: 2rem;
+  list-style: none;
+}
+#sauces {
+  column-count: 2;
+  column-gap: 2rem;
+  list-style: none;
+}
+#orderComplete {
+  width: 800px;
+  margin: 50px auto;
+}
+.visible {
+  visibility: visible;
+  margin-bottom: 15px;
+  background: #f7f7f7;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  padding: 30px;
+}
+.invisible {
+  visibility: hidden;
+}
