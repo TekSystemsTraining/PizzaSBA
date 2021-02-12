@@ -1,0 +1,1 @@
+console.log("congrats, you have activated the JS file.");
