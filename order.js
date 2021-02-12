@@ -42,11 +42,15 @@ function order(){
 function buildOutput(pizza){
     document.getElementById("orderComplete").classList.remove("invisible");
     document.getElementById("orderComplete").classList.add("visible");
-    var node = document.getElementById("pizzaOrdered");
     var toppingString = pizza.toppings.reduce(function(pre, next){
-      return pre + ', and ' + next;
+      return pre + ' and ' + next;
     })
     console.log("toppingstring", toppingString);
     var completeString = "You ordered a " + pizza.size + " pizza with " + pizza.sauce + " and the following toppings " + toppingString +".";
     console.log("completeSTring", completeString);
+    var node = document.createElement("p");
+    var text = document.createTextNode(completeString);
+    node.appendChild(text);
+    var element = document.getElementById("pizzaOrdered");
+    element.appendChild(node);    
 }
