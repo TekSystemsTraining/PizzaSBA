@@ -20,22 +20,33 @@ function updateToppings() {
   // console output for demo
   console.log(pizzaOrder.toppings); // array
 }
-function order(){
-  console.log("button working");
-  pizzaOrder.size = document.getElementById("sizeSelect").value;
-  pizzaOrder.sauce = getRadioVal(document.getElementById("orderForm"), "sauce");
-  console.log(pizzaOrder);
-}
-function getRadioVal(form, name){
+function getRadioValue(form, name){
   var val;
-  var radios = form.elements[name];
+  var radios = form.elements[name];   
     
-    // loop through list of radio buttons
-    for (var i=0, len=radios.length; i<len; i++) {
-        if ( radios[i].checked ) { // radio checked?
-            val = radios[i].id; // if so, hold its value in val
-            break; // and break out of for loop
+    for (var i=0, length=radios.length; i<length; i++) {
+        if ( radios[i].checked ) { 
+            val = radios[i].id; 
+            break; 
         }
     }
     return val;
+}
+function order(){
+  console.log("button working");
+  pizzaOrder.size = document.getElementById("sizeSelect").value;
+  pizzaOrder.sauce = getRadioValue(document.getElementById("orderForm"), "sauce");
+  buildOutput(pizzaOrder);
+  console.log(pizzaOrder);
+}
+function buildOutput(pizza){
+    document.getElementById("orderComplete").classList.remove("invisible");
+    document.getElementById("orderComplete").classList.add("visible");
+    var node = document.getElementById("pizzaOrdered");
+    var toppingString = pizza.toppings.reduce(function(pre, next){
+      return pre + ', and ' + next;
+    })
+    console.log("toppingstring", toppingString);
+    var completeString = "You ordered a " + pizza.size + " pizza with " + pizza.sauce + " and the following toppings " + toppingString +".";
+    console.log("completeSTring", completeString);
 }
